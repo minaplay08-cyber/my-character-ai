@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: my-character-ai
+    env: python
+    region: frankfurt # или oregon, если хочешь ближе к РФ
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "python main.py"
+    envVars:
+      - key: OPENROUTER_API_KEY
+        sync: false
+      - key: PORT
+        value: 10000
